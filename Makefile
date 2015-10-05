@@ -1,3 +1,5 @@
+default: 
+
 clean:
 	rm -rf output node_modules
 
