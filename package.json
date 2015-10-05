@@ -1,0 +1,25 @@
+{
+  "name": "turtlesoup",
+  "version": "0.0.0",
+  "description": "TurtleSoup ==========",
+  "main": "index.js",
+  "scripts": {
+    "test": "make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmerry/turtlesoup.git"
+  },
+  "keywords": [
+    "turtle"
+  ],
+  "author": "Richard Merry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmerry/turtlesoup/issues"
+  },
+  "homepage": "https://github.com/rmerry/turtlesoup",
+  "dependencies": {
+    "less": "^2.5.3"
+  }
+}
