@@ -24,5 +24,8 @@
     "jasmine": "^2.3.2",
     "jasmine-expect": "^2.0.0-beta2",
     "less": "^2.5.3"
+  },
+  "devDependencies": {
+    "jasmine": "~2.3.2"
   }
 }

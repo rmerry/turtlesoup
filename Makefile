@@ -22,3 +22,6 @@ styles:
 
 less:
 	./node_modules/less/bin/lessc ./src/less/*.less ./output/style/styles.css
+
+test:
+	./node_modules/jasmine/bin/jasmine.js ./src/test

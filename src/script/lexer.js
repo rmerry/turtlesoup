@@ -1,4 +1,4 @@
-var lex = function (input, output, callback) {
+var tokenise = function (input, output) {
 
   if (!output)
     output = '';
@@ -7,43 +7,45 @@ var lex = function (input, output, callback) {
   var length = input.length;
 
   /* We favour a non-regex approach in the interest of performance */
-  do {
-    if (input[cursor] === 'f') {
-      if (input[++cursor] === 'o')
-        if (input[++cursor] === 'r')
-          if (input[++cursor] === 'w')
-            if (input[++cursor] === 'a')
-              if (input[++cursor] === 'r')
-                if (input[++cursor] === 'd' && input[++cursor] === ' ') {
-                  if (input[++cursor].IsNumeric)
-                    output += 'F' +  + ' ';
-                }
-    }
+  if (input[cursor] === 'f') {
+    var innerCursor = cursor;
+    if (input[++innerCursor] === 'o')
+      if (input[++innerCursor] === 'r')
+        if (input[++innerCursor] === 'w')
+          if (input[++innerCursor] === 'a')
+            if (input[++innerCursor] === 'r')
+              if (input[++innerCursor] === 'd')
+                if (input[++innerCursor] === ' ' || !input[innerCursor])
+                  output += 'F';
+  } 
+  else if (input[cursor] === 'l') {
+    var innerCursor = cursor;
+    if (input[++innerCursor] === 'e')
+      if (input[++innerCursor] === 'f')
+        if (input[++innerCursor] === 't')
+          if (input[++innerCursor] === ' ' || !input[innerCursor])
+            output += 'L';
+  } 
+  else if (input[cursor] === 'r') {
+    var innerCursor = cursor;
+    if (input[++innerCursor] === 'i')
+      if (input[++innerCursor] === 'g')
+        if (input[++innerCursor] === 'h')
+          if (input[++innerCursor] === 't')
+            if (input[++innerCursor] === ' ' || !input[innerCursor])
+              output += 'R';
+  } 
+  else if (isDigit(input[cursor])) {
 
-    if (input[cursor] === 'l') {
-      if (input[++cursor] === 'e')
-        if (input[++cursor] === 'f')
-          if (input[++cursor] === 't' && input[++cursor] === ' ') {
-            output += 'FWD';
-          }
-    }
+  }
 
-    if (input[cursor] === 'r') {
-      if (input[++cursor] === 'i')
-        if (input[++cursor] === 'g')
-          if (input[++cursor] === 'h')
-              if (input[++cursor] === 't' && input[++cursor] === ' ') {
-                output += 'FWD';
-              }
-    }
-
-
-    
-  } while (cursor < length);
-
-  callback (output);
+  callback (null, output);
 };
 
 var isDigit = function (testChar) {
   return (testChar.charCodeAt(0) >= 48 && testChar.charCodeAt(0) <= 57);
+};
+
+module.exports = {
+  tokenise: tokenise
 };
