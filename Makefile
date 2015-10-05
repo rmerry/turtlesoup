@@ -21,4 +21,4 @@ styles:
 	cp ./node_modules/codemirror/lib/codemirror.css ./output/style/
 
 less:
-	./node_modules/less/bin/lessc ./src/less/*.less ./output/style/styles.css
+	./node_modules/less/bin/lessc ./src/less/main.less ./output/style/styles.css

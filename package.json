@@ -4,7 +4,8 @@
   "description": "TurtleSoup ==========",
   "main": "index.js",
   "scripts": {
-    "test": "make"
+    "test": "make",
+    "styles": "lessc src/less/main.less output/style/styles.css"
   },
   "repository": {
     "type": "git",
