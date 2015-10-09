@@ -16,6 +16,7 @@ scripts:
 	cp ./node_modules/codemirror/lib/codemirror.js ./output/scripts/
 	cp ./node_modules/codemirror/mode/turtle/turtle.js ./output/scripts/
 	cp ./src/script/main.js ./output/scripts/
+	cp ./src/script/ui.js ./output/scripts/
 
 styles:
 	cp ./node_modules/codemirror/lib/codemirror.css ./output/style/

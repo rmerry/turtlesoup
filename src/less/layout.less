@@ -9,19 +9,44 @@ body {
 	flex-flow: row wrap;
 
 	> aside {
+		position: relative;
+		z-index: 1;
 		order:2;
-		flex: 0 20%;
-		background: grey;
+		flex: 0 0;
+		background: #F7F7F7;
 		box-sizing: border-box;
 		transition: all .8s cubic-bezier(0.77, 0, 0.175, 1);
 		transform: translate3d(0,0,0);
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+
+		&.open {
+			flex: 0 22%;
+		}
+
+		ul {
+			li {
+				a {
+					display: block;
+					padding: 14px;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 16px;
+					color: #27ADB7;
+
+					&:hover {
+						background: #37CFDA;
+						color: #fff;
+					}
+				}
+			}
+		}
 	}
 }
 
 header {
-	height: 45px;
+	height: 88px;
 	width: 100%;
-	background: #ccc;
+	position: relative;
+	z-index: 2;
 }
 
 .main {
