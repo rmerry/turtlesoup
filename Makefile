@@ -10,16 +10,16 @@ prepare: clean
 all: pages scripts style less
 
 pages:
-	cp ./src/index.htm ./output/
+	cp ./ui/index.htm ./output/
 
 scripts:
 	cp ./node_modules/codemirror/lib/codemirror.js ./output/scripts/
 	cp ./node_modules/codemirror/mode/turtle/turtle.js ./output/scripts/
-	cp ./src/script/main.js ./output/scripts/
-	cp ./src/script/ui.js ./output/scripts/
+	cp ./lib/main.js ./output/scripts/
+	cp ./lib/ui.js ./output/scripts/
 
 styles:
 	cp ./node_modules/codemirror/lib/codemirror.css ./output/style/
 
 less:
-	./node_modules/less/bin/lessc ./src/less/main.less ./output/style/styles.css
+	./node_modules/less/bin/lessc ./ui/less/main.less ./output/style/styles.css
