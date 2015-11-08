@@ -16,7 +16,9 @@ pages:
 scripts:
 	cp ./node_modules/codemirror/lib/codemirror.js ./output/scripts/
 	cp ./node_modules/codemirror/mode/turtle/turtle.js ./output/scripts/
-	cp -r ./lib/* ./output/scripts/
+	cp -r ./lib/ui.js ./output/scripts/
+	cp -r ./node_modules/traceur/bin/traceur-runtime.js ./output/scripts/
+	./node_modules/traceur/traceur --out=./output/scripts/main.js ./lib/main.js
 
 styles:
 	cp ./node_modules/codemirror/lib/codemirror.css ./output/style/
